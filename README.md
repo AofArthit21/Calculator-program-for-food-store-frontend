@@ -1,37 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```markdown
+# 🛒 Food Store Web (Frontend)
 
-## Getting Started
+หน้าจอระบบร้านค้าออนไลน์สำหรับเลือกซื้อสินค้าและสรุปยอดเงิน พัฒนาด้วย **Next.js** และ **Tailwind CSS**
 
-First, run the development server:
+## 🛠 Features
+- **Product Listing:** แสดงรายการสินค้าพร้อมราคาและสถานะส่วนลด Bulk
+- **Shopping Cart:** ระบบตะกร้าสินค้าที่สามารถเพิ่ม-ลดจำนวนได้แบบ Real-time
+- **Discount Summary:** แสดงรายละเอียดส่วนลดแต่ละประเภท (Bulk, Member) อย่างชัดเจน
+- **Responsive UI:** รองรับการแสดงผลทั้งบน Desktop และ Mobile
 
+
+
+## ⚙️ Installation & Setup
+
+1. **ติดตั้ง Dependencies:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   npm install
+```
+2. **รันระบบ**
+```bash
+   npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗 Architecture
+Framework: Next.js (App Router)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Styling: Tailwind CSS สำหรับการจัดการ Layout และสีสัน
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+State Management: React Hooks สำหรับจัดการข้อมูลในตะกร้าสินค้า
 
-## Learn More
+API Integration: เชื่อมต่อกับ NestJS Backend ผ่าน Fetch API
 
-To learn more about Next.js, take a look at the following resources:
+📝 Logic การแสดงผล
+ระบบจะดึงข้อมูลสินค้าจาก GET /products
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Calculator-program-for-food-store-frontend
+เมื่อมีการเปลี่ยนแปลงในตะกร้า หน้าจอจะส่งข้อมูลไปคำนวณที่ POST /checkout เพื่อแสดงยอดเงินที่ถูกต้องที่สุดจากฝั่ง Server
